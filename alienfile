@@ -1,0 +1,20 @@
+use alienfile;
+use strict;
+use warnings;
+
+## dummy probe to force a system install
+probe sub {
+    'system';
+};
+
+##find out if cutadapt is actually installed
+my $cmd = `pipx environment`;
+$cmd = `cutadapt --help`;
+my $is_cutadapt_installed = $cmd =~ /\Acutadapt\s+version\s+[0-9.]+/;
+
+## if cutadapt is not installed, install it via pipx
+unless ($is_cutadapt_installed) {
+    system 'pipx install cutadapt';
+}
+
+1;
