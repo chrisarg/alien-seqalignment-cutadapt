@@ -6,7 +6,8 @@ Alien::SeqAlignment::cutadapt - Find or install cutadapt
 
 Command line tool:
 
-cutadapt (list of options);
+system 'cutadapt' (list of arguments and options);
+system "cutadapt  (list of argumentns and options)"; # less safe
 
 # DESCRIPTION
 
@@ -15,7 +16,9 @@ other Perl distributions that are on CPAN.  It does this by first trying to
 detect an existing install of cutadapt on your system.  If found it
 will use that.  If it cannot be found, it will use the Python package installer
 pipx to download and install cutadapt in an isolated environment for each
-user.
+user. Note that after installation one ends up with a tool that can be used
+from the shell (i.e. no need for Perl), hence uninstalling the Perl module will
+not uninstall cutadapt or pipx. 
 
 Note that the installation method of pipx varies by operating system. 
 MacOS and Windows users should have working installations of homebrew and scoop respectively to use this Perl Alien module.

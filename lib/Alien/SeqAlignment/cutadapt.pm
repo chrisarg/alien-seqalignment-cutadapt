@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Alien::SeqAlignment::cutadapt;
-$Alien::SeqAlignment::cutadapt::VERSION = '0.02';
+$Alien::SeqAlignment::cutadapt::VERSION = '0.03';
 
 use parent qw( Alien::Base );
 
@@ -13,7 +13,8 @@ Alien::SeqAlignment::cutadapt - Find or install cutadapt
 
 Command line tool:
 
-cutadapt (list of options);
+system 'cutadapt' (list of arguments and options);
+system "cutadapt  (list of argumentns and options)"; # less safe
 
 =head1 DESCRIPTION
 
@@ -22,7 +23,9 @@ other Perl distributions that are on CPAN.  It does this by first trying to
 detect an existing install of cutadapt on your system.  If found it
 will use that.  If it cannot be found, it will use the Python package installer
 pipx to download and install cutadapt in an isolated environment for each
-user.
+user. Note that after installation one ends up with a tool that can be used
+from the shell (i.e. no need for Perl), hence uninstalling the Perl module will
+not uninstall cutadapt or pipx. 
 
 Note that the installation method of pipx varies by operating system. 
 MacOS and Windows users should have working installations of homebrew and scoop respectively to use this Perl Alien module.
@@ -31,7 +34,7 @@ MacOS and Windows users should have working installations of homebrew and scoop 
 
 =over 4
 
-=item L<cutadapt|https://cutadapt.readthedocs.io/en/stable/index.html>
+=item * L<cutadapt|https://cutadapt.readthedocs.io/en/stable/index.html>
 
 Cutadapt finds and removes adapter sequences, primers, poly-A tails and 
 other types of unwanted sequence from your high-throughput sequencing
@@ -50,7 +53,7 @@ contain IUPAC wildcard characters. Cutadapt can also demultiplex your
 reads.
 
 
-=item L<pipx|https://pipx.pypa.io/stable/>
+=item * L<pipx|https://pipx.pypa.io/stable/>
 
 pipx is a tool to help you install and run end-user applications written 
 in Python. It's roughly similar to macOS's brew, JavaScript's npx, and
@@ -71,12 +74,11 @@ and its associated packages.
 pipx does not ship with pip, but installing it is often an important
 part of bootstrapping your system.
 
-=item L<Homebrew|https://brew.sh/>
+=item * L<Homebrew|https://brew.sh/>
 
 Homebrew installs the stuff you need that Apple (or your Linux system) didn't.
 
-
-=item L<Scoop|https://scoop.sh/>
+=item * L<Scoop|https://scoop.sh/>
 
 Scoop is a command-line installer for Windows that:
 *Eliminates permission popup windows
@@ -86,15 +88,15 @@ Scoop is a command-line installer for Windows that:
 *Finds and installs dependencies automatically
 *Performs all the extra setup steps itself to get a working program
 
-=item L<Alien>
+=item * L<Alien>
 
 Documentation on the Alien concept itself.
 
-=item L<Alien::Base>
+=item * L<Alien::Base>
 
 The base class for this Alien.
 
-=item L<Alien::Build::Manual::AlienUser>
+=item * L<Alien::Build::Manual::AlienUser>
 
 Detailed manual for users of Alien classes.
 
