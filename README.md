@@ -6,8 +6,8 @@ Alien::SeqAlignment::cutadapt - Find or install cutadapt
 
 Command line tool:
 
-system 'cutadapt' (list of arguments and options);
-system "cutadapt  (list of argumentns and options)"; # less safe
+ system 'cutadapt' (list of arguments and options);
+ system "cutadapt  (list of argumentns and options)"; # less safe
 
 # DESCRIPTION
 
