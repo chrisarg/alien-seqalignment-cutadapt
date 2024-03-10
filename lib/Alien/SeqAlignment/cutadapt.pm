@@ -1,8 +1,8 @@
 use strict;
 use warnings;
 package Alien::SeqAlignment::cutadapt;
-$Alien::SeqAlignment::cutadapt::VERSION = '0.01';
-# VERSION '0.01';
+$Alien::SeqAlignment::cutadapt::VERSION = '0.02';
+
 use parent qw( Alien::Base );
 
 =head1 NAME
@@ -24,7 +24,8 @@ will use that.  If it cannot be found, it will use the Python package installer
 pipx to download and install cutadapt in an isolated environment for each
 user.
 
-
+Note that the installation method of pipx varies by operating system. 
+MacOS and Windows users should have working installations of homebrew and scoop respectively to use this Perl Alien module.
 
 =head1 SEE ALSO
 
@@ -48,6 +49,42 @@ single-end and paired-end reads in various ways. Adapter sequences can
 contain IUPAC wildcard characters. Cutadapt can also demultiplex your
 reads.
 
+
+=item L<pipx|https://pipx.pypa.io/stable/>
+
+pipx is a tool to help you install and run end-user applications written 
+in Python. It's roughly similar to macOS's brew, JavaScript's npx, and
+Linux's apt.
+
+It's closely related to pip. In fact, it uses pip, but is focused on 
+installing and managing Python packages that can be run from the command
+line directly as applications. 
+
+How is it Different from pip?
+
+pip is a general-purpose package installer for both libraries and apps 
+with no environment isolation. pipx is made specifically for application
+installation, as it adds isolation yet still makes the apps available in
+your shell: pipx creates an isolated environment for each application
+and its associated packages.
+
+pipx does not ship with pip, but installing it is often an important
+part of bootstrapping your system.
+
+=item L<Homebrew|https://brew.sh/>
+
+Homebrew installs the stuff you need that Apple (or your Linux system) didn't.
+
+
+=item L<Scoop|https://scoop.sh/>
+
+Scoop is a command-line installer for Windows that:
+*Eliminates permission popup windows
+*Hides GUI wizard-style installers
+*Prevents PATH pollution from installing lots of programs
+*Avoids unexpected side-effects from installing and uninstalling programs
+*Finds and installs dependencies automatically
+*Performs all the extra setup steps itself to get a working program
 
 =item L<Alien>
 
