@@ -26,7 +26,7 @@ from the shell (i.e. no need for Perl), hence uninstalling the Perl module will
 not uninstall cutadapt or pipx. If you would like to uninstall cutadapt, then
 you should use pipx to uninstall it as in: 
 
-    pipx uninstall cutadapt.
+    pipx uninstall cutadapt
 
 Note that the installation method of pipx varies by operating system. 
 MacOS and Windows users should have working installations of homebrew and scoop 
