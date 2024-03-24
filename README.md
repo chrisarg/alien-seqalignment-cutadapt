@@ -2,6 +2,10 @@
 
 Alien::SeqAlignment::cutadapt - Find or install cutadapt
 
+# VERSION
+
+version 0.05
+
 # SYNOPSIS
 
 Command line tool:
@@ -12,7 +16,7 @@ Command line tool:
 
 or you can even do this to maintain compatibility with the Alien tool API
 
-    system Alien::SeqAlignment::cutadapt->exe (list of arguments and options)
+    system Alien::SeqAlignment::cutadapt->cutadapt (list of arguments and options)
 
 # DESCRIPTION
 
@@ -26,7 +30,7 @@ from the shell (i.e. no need for Perl), hence uninstalling the Perl module will
 not uninstall cutadapt or pipx. If you would like to uninstall cutadapt, then
 you should use pipx to uninstall it as in: 
 
-    pipx uninstall cutadapt
+    pipx uninstall cutadapt.
 
 Note that the installation method of pipx varies by operating system. 
 MacOS and Windows users should have working installations of homebrew and scoop 
@@ -34,9 +38,9 @@ respectively to use this Perl Alien module.
 
 # METHODS
 
-## exe
+## cutadapt
 
-    Alien::SeqAlignment::cutadapt->exe
+    Alien::SeqAlignment::cutadapt->cutadapt
 
 Returns the command name for running the CLI version of the cutadapt CLI. 
 
@@ -106,6 +110,11 @@ Returns the command name for running the CLI version of the cutadapt CLI.
 - [Alien::Build::Manual::AlienUser](https://metacpan.org/pod/Alien%3A%3ABuild%3A%3AManual%3A%3AAlienUser)
 
     Detailed manual for users of Alien classes.
+
+- [Bio::SeqAlignment](https://metacpan.org/pod/Bio::SeqAlignment)
+
+    A collection of tools and libraries for aligning biological sequences 
+    from within Perl. 
 
 # AUTHOR
 
